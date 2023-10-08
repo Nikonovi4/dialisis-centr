@@ -1,0 +1,86 @@
+.repairHistoryList {
+  width: 90%;
+  padding-left: 50px;
+  padding-right: 50px;
+  box-sizing:border-box;
+  height: 30vh;
+  overflow-y: scroll;
+  background-color: rgb(244, 239, 239);
+  margin-left: 50px;
+  margin-right: 50px;
+}
+::-webkit-scrollbar {
+  -webkit-appearance: none;
+  width: 10px;
+}
+::-webkit-scrollbar-thumb {
+  border-radius: 5px;
+  background-color: rgba(152, 70, 70, 0.5);
+  -webkit-box-shadow: 0 0 1px rgba(126, 78, 78, 0.5);
+}
+
+.closeRepairHistoryButton {
+  background-image: url(../../images/icons8-крестик-78.png);
+  width: 35px;
+  height: 35px;
+  background-size: cover;
+  padding: 0;
+  background-color: transparent;
+  border: none;
+}
+
+.repairHisoryHeader {
+  display: flex;
+  flex-direction: row;
+  padding-left: 50px;
+  padding-right: 50px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.repairHisoryHeader_invisible {
+  display: none;
+}
+
+.newRepair__form {
+  margin-left: 50px;
+  margin-right: 50px;
+  
+  
+}
+
+.newRepair__fildset {
+  display: grid;
+  grid-template-columns:30% 70%;
+  grid-template-rows: repeat(4 , 30px);
+  grid-template-areas:
+  "title discription"
+  "operationTime discription"
+  ". discription"
+  "button button";
+  gap: 5px 5px;
+}
+
+.newRepair__title {
+  grid-area: title
+}
+
+.newRepair__operationTime {
+  grid-area: operationTime
+}
+
+.newRepair__discription {
+  grid-area: discription;
+ white-space: normal;
+
+}
+
+.newRepir__submit {
+  grid-area: button
+}
+
+.errors__block {
+  display: flex;
+  flex-direction: column;
+  margin-left: 50px;
+}

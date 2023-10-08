@@ -1,0 +1,49 @@
+.popup {
+  position: fixed;
+  background-color: rgba(24, 93, 102, 0.4);
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.popup_invisible {
+  display: none;
+}
+
+.popup__content {
+  width: 50vw;
+  height: 70vh;
+  border-radius: 10px;
+  background-color: #ffff;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.closeButton {
+  background-image: url(../../images/icons8-крестик-78.png);
+  width: 35px;
+  height: 35px;
+  background-size: cover;
+  padding: 0;
+  background-color: transparent;
+  border: none;
+  position: absolute;
+  cursor: pointer;
+  top: -35px;
+  right: -25px;
+}
+
+.popup__fildset {
+  border: none;
+}
+
+.popup__inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}

@@ -1,0 +1,40 @@
+.table {
+  width: 100vw;
+  padding-left: 50px;
+  padding-right: 50px;
+  box-sizing: border-box;
+}
+
+.table__content {
+  display: grid;
+
+  grid-template-columns: repeat(4, 20vw);
+  grid-template-rows: repeat(7, 50px);
+  padding: 0;
+  margin: 0;
+}
+
+.table__secton {
+  display: flex;
+  flex-direction: row;
+  box-sizing: border-box;
+  justify-content: center;
+}
+
+.table__legent {
+  padding: 0;
+  margin: 0;
+}
+
+.legend {
+  width: 70px;
+  height: 48px;
+  list-style: none;
+  border: 1px solid #000;
+}
+
+
+.table__header {
+  list-style: none;
+  border: 1px solid #000;
+}

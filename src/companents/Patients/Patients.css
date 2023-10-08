@@ -1,0 +1,31 @@
+.content__patient_expection {
+  background-color: darkslategrey;
+}
+
+.cell {
+  list-style: none;
+  border: 1px solid #000;
+}
+
+.cell_expection {
+  background-color: blue;
+}
+.cell_arriving {
+background-color: chartreuse;
+}
+
+.cell_treatment {
+background-color: crimson;
+}
+
+.cell_ending {
+ background-color: lime;
+}
+
+.cell_notcome {
+  background-color: navajowhite;
+}
+
+.menu__button_invisible {
+  display: none;
+}

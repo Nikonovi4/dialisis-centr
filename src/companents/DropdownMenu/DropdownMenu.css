@@ -1,0 +1,16 @@
+.dropdown__list {
+  background-color: darkorange;
+  position: absolute;
+  padding: 0;
+  padding-top: 10px;
+}
+
+
+.dropdown__list_invisible {
+  display: none;
+}
+
+.dropdowm__item {
+  list-style: none;
+
+}

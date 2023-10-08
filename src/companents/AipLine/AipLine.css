@@ -1,0 +1,21 @@
+.aipTable {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  padding-left: 50px;
+  padding-right: 50px;
+  gap: 0 10px;
+}
+
+.aipLine {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+}
+
+.aipLine__cell {
+  width: 25%;
+  height: 20px;
+
+  border-width: 1px;
+  border-style: solid;
+}

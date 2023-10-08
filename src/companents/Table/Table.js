@@ -1,84 +1,60 @@
-import patintsList from "../../utils/patienstList";
-import { useTable } from 'react-table';
-
 import React from "react";
-import { useMemo } from "react";
-import { COLUMNS } from "../../utils/Columns";
-
-// import 'react-table/react-table.css'
+import patientsList from "../../utils/patientsList";
+import Patients from "../Patients/Patients";
 
 const Table = () => {
-  const columns = useMemo(() => COLUMNS, [])
-  const data = useMemo(() => patintsList, [])
+  const makeShedule = (patientLIst, shiftCount, placeCount) => {
+    const res = [];
 
-  const tableInstance = useTable({
-    columns,
-    data
-})
-const { getTableProps, getTableBodyProps, headerGroups, footerGroups, rows, prepareRow} = tableInstance
-console.log(tableInstance)
+    for (let i = 1; i <= shiftCount; i++) {
+      const sameShiftPatients = patientLIst
+        .filter((pacient) => pacient.shift === i)
+        .sort((a, b) => a.place - b.place);
+
+      const lineShedule = [];
+      for (let j = 1; j <= placeCount; j++) {
+        const cell = sameShiftPatients.find((i) => i.place === j) || {};
+        lineShedule.push(cell);
+      }
+      res.push(lineShedule);
+    }
+
+    return res;
+  };
+
+  const packing = makeShedule(patientsList, 4, 6);
+  let renderList = [];
+
+  for (let i = 0; i < packing[0].length; i++) {
+    for (let j = 0; j < packing.length; j++) {
+      renderList.push(packing[j][i]);
+    }
+  }
 
   return (
-    <table {...getTableProps()}>
-        <thead>
-            {headerGroups.map((headerGroup) => (
-                <tr {...headerGroup.getHeaderGroupProps()}>
-                    {headerGroup.headers.map((column) => (
-                        <th {...column.getHeaderProps()}> 
-                          {column.render('Header')}
-                       </th>
-                    ))}
-                </tr>
-            ))}
-        </thead>
-        <tbody {...getTableBodyProps()}>
-            {rows.map(row => {
-                 prepareRow(row)
-                  return (
-                    <tr {...row.getRowProps()}>
-                       {row.cells.map((cell) => {
-                         return <td {...cell.getCellProps()}>
-                          {cell.render('Cell')}</td>
-                            })}
-                    </tr>
-                    )
-                })
-            }
-        </tbody>
-    </table>
-  
-    // <table>
-    //   <thead>
-    //     <tr>
-    //       <th></th>
-    //       <th>Смена 1</th>
-    //       <th>Смена 2</th>
-    //       <th>Смена 3</th>
-    //       <th>Смена 4</th>
-    //     </tr>
-    //   </thead>
-    //   <tr>
-    //     <td className="table__verical">Место 1</td>
-    //     <td>Иванов <button>Пришел</button></td>
-    //     <td>Петоров</td>
-    //     <td>Сидоров</td>
-    //     <td>Васечкин</td>
-    //   </tr>
-    //   <tr>
-    //     <td className="table__verical">Место 2</td>
-    //     <td>Бетмен</td>
-    //     <td>Аквамен</td>
-    //     <td>Флеш</td>
-    //     <td>Галь Гадот</td>
-    //   </tr>
-    //   <tr>
-    //     <td className="table__verical">Место 3</td>
-    //     <td>Тинки-Винки</td>
-    //     <td>Ля-ля</td>
-    //     <td>Бо-бо</td>
-    //     <td>Тиранозавр</td>
-    //   </tr>
-    // </table>
+    <section className="table">
+      <div className="table__secton">
+        <ul className="table__legent">
+          <li className="legend"></li>
+          <li className="legend">Место 1</li>
+          <li className="legend">Место 2</li>
+          <li className="legend">Место 4</li>
+          <li className="legend">Место 3</li>
+          <li className="legend">Место 5</li>
+          <li className="legend">Место 6</li>
+        </ul>
+        <ul className="table__content">
+          <li className="table__header">Первая смена</li>
+          <li className="table__header">Вторя смена</li>
+          <li className="table__header">Третья смена</li>
+          <li className="table__header">Четвертая смена</li>
+
+          {renderList?.map((item, i) => (
+            <Patients data={item} />
+          ))}
+        </ul>
+      </div>
+    </section>
   );
 };
 

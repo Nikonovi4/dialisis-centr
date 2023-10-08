@@ -3,3 +3,13 @@
 
 @import url('./companents/Login/Login.css');
 @import url('./companents/Table/Table.css');
+@import url('./companents/DropdownMenu/DropdownMenu.css');
+@import url('./companents/Patients/Patients.css');
+@import url('./companents/MainScreen/MainScreen.css');
+@import url('./companents/Header/Header.css');
+@import url('./companents/Popup/Popup.css');
+@import url('./companents/AipLine/AipLine.css');
+@import url('./companents/RepairList/RepairList.css');
+@import url('./companents/EngMainScreen/EngMainScreen.css');
+@import url('./companents/RepairHistory/RepairHistory.css');
+

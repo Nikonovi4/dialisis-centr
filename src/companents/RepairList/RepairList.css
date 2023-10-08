@@ -1,0 +1,43 @@
+.repairList{
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+
+.repairList__info{
+  width: 25%;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  justify-content: center;
+}
+
+.repairList__description {
+  width: 75%;
+  margin: 0;
+}
+
+.title{
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.repairList__editButton {
+  background-image: url(../../images/edit.png);
+  width: 20px;
+  height: 20px;
+  border: none;
+  background-size: cover;
+  padding: 0;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.repairList__editButton_invisible {
+  display: none;
+}
+
+
+

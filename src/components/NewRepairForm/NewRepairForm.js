@@ -7,6 +7,8 @@ const NewRepairForm = ({
   addNewRepair,
   setValues,
   values,
+  digtl_reg,
+  new_repair_inputs_names,
 }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -25,6 +27,8 @@ const NewRepairForm = ({
       isValid={isValid}
       errors={errors}
       values={values}
+      digtl_reg={digtl_reg}
+      inputs_name={new_repair_inputs_names}
     />
   );
 };

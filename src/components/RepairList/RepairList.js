@@ -12,7 +12,7 @@ const RepairList = ({ data, setEditedRepairItem }) => {
         <div className="repairList__title">{data.title}</div>
         <div className="repairList__date">{data.date}</div>
         <div className="repairList__responsible">{data.responsible}</div>
-        <div className="repairList__opertionTime">{`Наработка: ${data.opertionTime} час.`}</div>
+        <div className="repairList__opertionTime">{`Наработка: ${data.operationTime} час.`}</div>
         <button
           className={
             data.owner === userInfo._id

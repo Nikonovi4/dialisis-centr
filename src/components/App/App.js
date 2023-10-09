@@ -45,6 +45,7 @@ function App() {
   const addNewRepair = () => {
     const date = new Date();
     const formatDate = new Intl.DateTimeFormat("ru").format(date);
+
     const newRepairItem = {
       description: values.description,
       operationTime: values.operationTime,

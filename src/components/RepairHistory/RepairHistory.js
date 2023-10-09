@@ -1,5 +1,6 @@
 import RepairList from "../RepairList/RepairList";
 import NewRepairForm from "../NewRepairForm/NewRepairForm";
+import { DIGTL_REG as digtl_reg, NEW_REPAIR_INPUTS_NAMES as new_repair_inputs_names } from "../../utils/constants";
 import CangesRepairHistory from "../CangesRepairHistoryForm/CangesRepairHistoryForm";
 
 const RepairHistory = ({
@@ -42,6 +43,8 @@ const RepairHistory = ({
         addNewRepair={addNewRepair}
         setValues={setValues}
         values={values}
+        digtl_reg={digtl_reg}
+        new_repair_inputs_names={new_repair_inputs_names}
       />
       {/* <CangesRepairHistory 
         handleChange={handleChange}

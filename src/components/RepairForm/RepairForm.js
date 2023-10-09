@@ -1,6 +1,6 @@
-import { DIGTL_REG } from "../../utils/constants";
 
-const RepairForm = ({ handleSubmit, handleChange, isValid, errors, values }) => {
+
+const RepairForm = ({ handleSubmit, handleChange, isValid, errors, values, digtl_reg, inputs_name }) => {
   return (
     <form className="newRepair__form" onSubmit={handleSubmit}>
       <fieldset className="newRepair__fildset">
@@ -8,7 +8,7 @@ const RepairForm = ({ handleSubmit, handleChange, isValid, errors, values }) => 
           className="newRepair__input newRepair__title"
           type="text"
           placeholder="Название проблемы"
-          name="title"
+          name={inputs_name.title_input}
           onChange={handleChange}
           value={values.title}
           required
@@ -18,18 +18,18 @@ const RepairForm = ({ handleSubmit, handleChange, isValid, errors, values }) => 
           className="newRepair__input newRepair__operationTime"
           type="text"
           placeholder="Наработка часов"
-          name="operationTime"
+          name={inputs_name.operationTime_input}
           onChange={handleChange}
           value={values.operationTime}
           minLength="2"
           required
-          pattern={DIGTL_REG}
+          pattern={digtl_reg}
         />
         <textarea
           className="newRepair__input newRepair__discription"
           type="text"
           placeholder="Описание работ"
-          name="description"
+          name={inputs_name.description_input}
           onChange={handleChange}
           required
           value={values.description}

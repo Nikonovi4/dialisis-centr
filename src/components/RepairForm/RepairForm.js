@@ -1,6 +1,7 @@
 
 
 const RepairForm = ({ handleSubmit, handleChange, isValid, errors, values, digtl_reg, inputs_name }) => {
+
   return (
     <form className="newRepair__form" onSubmit={handleSubmit}>
       <fieldset className="newRepair__fildset">
@@ -10,7 +11,7 @@ const RepairForm = ({ handleSubmit, handleChange, isValid, errors, values, digtl
           placeholder="Название проблемы"
           name={inputs_name.title_input}
           onChange={handleChange}
-          value={values.title}
+          defaultValue={values.title}
           required
           minLength="6"
         />
@@ -20,7 +21,7 @@ const RepairForm = ({ handleSubmit, handleChange, isValid, errors, values, digtl
           placeholder="Наработка часов"
           name={inputs_name.operationTime_input}
           onChange={handleChange}
-          value={values.operationTime}
+          defaultValue={values.operationTime}
           minLength="2"
           required
           pattern={digtl_reg}
@@ -32,7 +33,7 @@ const RepairForm = ({ handleSubmit, handleChange, isValid, errors, values, digtl
           name={inputs_name.description_input}
           onChange={handleChange}
           required
-          value={values.description}
+          defaultValue={values.description}
           minLength="10"
         />
         <button className="newRepir__submit" type="submit" disabled={!isValid}>
@@ -40,9 +41,9 @@ const RepairForm = ({ handleSubmit, handleChange, isValid, errors, values, digtl
         </button>
       </fieldset>
       <div className="errors__block">
-        <span>{errors?.title}</span>
-        <span>{errors?.description}</span>
-        <span>{errors?.operationTime}</span>
+        <span>{errors?.title_input}</span>
+        <span>{errors?.description_input}</span>
+        <span>{errors?.operationTime_input}</span>
       </div>
     </form>
   );

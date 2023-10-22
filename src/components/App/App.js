@@ -12,12 +12,16 @@ function App() {
     title: "",
     description: "",
     operationTime: "",
+    edit_title: "",
+    edit_description: "",
+    edit_operationTime: ""
   });
+
   const [errors, setErrors] = useState({});
   const [isValid, setIsValid] = useState(false);
   const [isAipInfo, setAipInfo] = useState("");
 
-  console.log(values)
+
 
   const handleChange = (e) => {
     const target = e.target;
@@ -27,7 +31,7 @@ function App() {
     setErrors({ ...errors, [name]: target.validationMessage });
     setIsValid(target.closest("form").checkValidity());
   };
-
+console.log(values)
   const [isRenderRepairHistory, setRenderRepairHistory] = useState([]);
   const [isRepairAip, setRepairAip] = useState({});
 
@@ -60,27 +64,29 @@ function App() {
     repairList.push(newRepairItem);
   };
   // исправление старой записи
-  // const [isEditedRepairItem, setEditedRepairItem] = useState({});
-  // const [isEditedRepairFormValue, setEditedRepairFormValue] = useState({
-  //   title: "",
-  //   operationTime: "",
-  //   description: "",
-  // });
+  const [isEditedRepairItem, setEditedRepairItem] = useState({});
+  const [isEditedRepairFormValue, setEditedRepairFormValue] = useState({
+    title: "",
+    operationTime: "",
+    description: "",
+  });
 
-  // useEffect(() => {
-  //   if (isEditedRepairItem) {
-  //     setEditedRepairFormValue({
-  //       title: isEditedRepairItem.title,
-  //       operationTime: isEditedRepairItem.operationTime,
-  //       description: isEditedRepairItem.description,
-  //     });
-  //   }
-  // }, [
-  //   isEditedRepairItem,
-  //   isEditedRepairItem.title,
-  //   isEditedRepairItem.operationTime,
-  //   isEditedRepairItem.description,
-  // ]);
+  const [isOpenEditForm, setOpenEditForm] = useState(false)
+
+  useEffect(() => {
+    if (isEditedRepairItem) {
+      setEditedRepairFormValue({
+        title: isEditedRepairItem.title,
+        operationTime: isEditedRepairItem.operationTime,
+        description: isEditedRepairItem.description,
+      });
+    }
+  }, [
+    isEditedRepairItem,
+    isEditedRepairItem.title,
+    isEditedRepairItem.operationTime,
+    isEditedRepairItem.description,
+  ]);
 
  
 
@@ -101,8 +107,11 @@ function App() {
             values={values}
             setValues={setValues}
             errors={errors}
-            // setEditedRepairItem={setEditedRepairItem}
-            // isEditedRepairFormValue={isEditedRepairFormValue}
+            setEditedRepairItem={setEditedRepairItem}
+            isEditedRepairFormValue={isEditedRepairFormValue}
+            setEditedRepairFormValue={setEditedRepairFormValue}
+            isOpenEditForm={isOpenEditForm}
+            setOpenEditForm={setOpenEditForm}
           />
         }
       />

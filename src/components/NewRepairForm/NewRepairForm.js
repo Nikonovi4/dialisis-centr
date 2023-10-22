@@ -17,6 +17,9 @@ const NewRepairForm = ({
       title: "",
       description: "",
       operationTime: "",
+      edit_title: "",
+      edit_description: "",
+      edit_operationTime: ""
     });
   };
 

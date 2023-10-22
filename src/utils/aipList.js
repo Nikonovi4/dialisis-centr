@@ -8,7 +8,7 @@ const aipList = [
     software: '9,1b',
     responsible: 'Брюс Уейн',
     place: 1,
-    condition: 'serviceable'
+    condition: 'serviceable',
   },
   {
     internalNumber : 2,

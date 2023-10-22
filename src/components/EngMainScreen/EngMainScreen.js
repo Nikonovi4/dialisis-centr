@@ -22,7 +22,10 @@ const EngMainScreen = ({
   setValues,
   errors,
   setEditedRepairItem,
-  isEditedRepairFormValue
+  isEditedRepairFormValue,
+  setEditedRepairFormValue,
+  isOpenEditForm,
+  setOpenEditForm
 }) => {
   const [isOpenPopup, setOpenPopup] = useState(false);
 
@@ -63,6 +66,9 @@ const EngMainScreen = ({
           errors={errors}
           setEditedRepairItem={setEditedRepairItem}
           isEditedRepairFormValue={isEditedRepairFormValue}
+          setEditedRepairFormValue={setEditedRepairFormValue}
+          isOpenEditForm={isOpenEditForm}
+          setOpenEditForm={setOpenEditForm}
         />
       ) : (
         ""

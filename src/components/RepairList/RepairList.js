@@ -1,9 +1,10 @@
 import { userInfo } from "../../utils/userInfo";
 
-const RepairList = ({ data, setEditedRepairItem }) => {
+const RepairList = ({ data, setEditedRepairItem, setOpenEditForm }) => {
 
   const handleEditRepairItem = () => {
     setEditedRepairItem(data)
+    setOpenEditForm((state)=> !state)
   }
 
   return (
